@@ -19,7 +19,7 @@ export default class SearchableMovieReviewsContainer extends React.Component{
 
         fetch(URL + this.state.searchTerm)
         .then(resp => resp.json())
-        .then(resp => this.setState({reviews: resp.results}))
+        .then(reviews => this.setState({reviews: reviews.results}))
     }
 
 
@@ -33,7 +33,7 @@ export default class SearchableMovieReviewsContainer extends React.Component{
                 <input type="text" value={this.state.searchTerm} onChange={this.handleChange} />
                 <button type="submit">Submit</button>
             </form>
-            <MovieReviews review={this.state.reviews} />
+            <MovieReviews reviews={this.state.reviews} />
         </div>
     }
 }

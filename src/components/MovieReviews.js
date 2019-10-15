@@ -3,7 +3,6 @@ import React from 'react';
 const MovieReviews = props => {
     return (
       <div className="review-list">
-          {console.log({props})}
         {props.reviews.map(review => {         
          return(
            <div className="review" key={review.display_title}>
